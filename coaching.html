@@ -1,0 +1,103 @@
+<!--
+index/homepage
+Last modified: 19/7/2021
+@authors: Jack
+-->
+
+<!-- header -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crusader's Compass</title>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- navigation -->
+
+<ul class="nav">
+    <div class="img"><img src="assets/icon.png" alt="icon"></div>
+    <div class="h1">Crusader's Compass - Coaching</div>
+    <li class="right"><a href="archives.html">Archives</a></li>
+    <li class="right"><a class="active" href="coaching.html">Coaching</a></li>
+    <li class="right"><a href="aoe.html">AOE Div</a></li>
+    <li class="right"><a href="maps.html">Maps</a></li>
+    <li class="right"><a href="comps.html">Comps</a></li>
+    <li class="right"><a href="team.html">Team</a></li>
+    <li class="right"><a href="index.html">Home</a></li>
+</ul>
+
+<!-- content -->    
+    
+    <div class="introbox">
+        <h2 style="color:#541B61;">Coaching</h2>
+            <p>Wrath is the coach for the ACE Knight's team. There are also other individual coaches, contact the captain Shinonomi for more information. There is also a team coaching budget provided by the manager Gatt, allowing us to hire experienced and high level coaches for coaching sessions.</p>
+            <p>VOD review sessions of AOE matches will often occur on Sunday nights. All coaching feedback will be recorded into google documents which will be linked onto this page for easy access.</p>
+    </div>  
+            
+    <div class="box">
+        <h2 style="color:#541B61;">Coaching & Feedback Archive</h2>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for trial/scrim/match..">
+
+            <table id="myTable">
+                <tr class="header">
+                    <th style="width:50%;">Trial/Scrim/Match Information</th>
+                    <th style="width:50%;">Coaching & Feedback</th>
+                </tr>
+                <tr>
+                    <td>Trial 1 (20/07/2021) VS [KE] Mystic</td>
+                    <td><a href="https://docs.google.com/document/d/1Xo-Y5-6Hxd4MnfMPycTWytOZBTN80qLnDYxCrjH8oGQ/edit?usp=sharing">Trial 1 Coaching & Feedback</a></td>
+                </tr>
+                <tr>
+                    <td>Trial 2 (21/07/2021) VS Limelight Oberon</td>
+                    <td><a href="">Trial 2 Coaching & Feedback</a></td>
+                </tr>
+                <tr>
+                    <td>Trial 3 (22/07/2021) VS FA Team 1</td>
+                    <td><a href="">Trial 3 Coaching & Feedback</a></td>
+                </tr>
+                <tr>
+                    <td>Trial 4 (27/07/2021) VS Isolation Protocol</td>
+                    <td><a href="">Trial 4 Coaching & Feedback</a></td>
+                </tr>
+            </table>
+
+    </div>  
+            
+<!-- footer -->
+    
+<ul class="footer"><div class="rights">© Copyright - ACE ESPORTS - 2021 | All rights reserved</div></ul>
+
+<!-- script -->
+
+<script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    </script>
+
+</body>
+</html>

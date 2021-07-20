@@ -1,0 +1,133 @@
+<!--
+index/homepage
+Last modified: 19/7/2021
+@authors: Jack
+-->
+
+<!-- header -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crusader's Compass</title>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- navigation -->
+
+<ul class="nav">
+    <div class="img"><img src="assets/icon.png" alt="icon"></div>
+    <div class="h1">Crusader's Compass - Comps</div>
+    <li class="right"><a href="archives.html">Archives</a></li>
+    <li class="right"><a href="coaching.html">Coaching</a></li>
+    <li class="right"><a href="aoe.html">AOE Div</a></li>
+    <li class="right"><a href="maps.html">Maps</a></li>
+    <li class="right"><a class="active" href="comps.html">Comps</a></li>
+    <li class="right"><a href="team.html">Team</a></li>
+    <li class="right"><a href="index.html">Home</a></li>
+</ul>
+
+<!-- content -->    
+
+    <div class="introbox">
+        <h2 style="color:#541B61;">List of Compositions</h2>
+
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for comps...">
+
+                <table id="myTable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Main Tank</th>
+                        <th>Off Tank</th>
+                        <th>Hitscan DPS</th>
+                        <th>Projectile DPS</th>
+                        <th>Aim Support</th>
+                        <th>Main Support</th>
+                    </tr>
+                    <tr>
+                        <td>Rush</td>
+                        <td>Winston</td>
+                        <td>D.Va</td>
+                        <td>Tracer/Reaper</td>
+                        <td>Echo/Sombra</td>
+                        <td>Moira</td>
+                        <td>Lucio</td>
+                    </tr>
+                    <tr>
+                        <td>Double Bubble</td>
+                        <td>Winston</td>
+                        <td>Zarya</td>
+                        <td>Tracer/Sombra</td>
+                        <td>Echo</td>
+                        <td>Ana</td>
+                        <td>Brig/Mercy</td>
+                    </tr>
+                    <tr>
+                        <td>Brawl</td>
+                        <td>Reinhardt</td>
+                        <td>D.Va/Zarya</td>
+                        <td>McMree</td>
+                        <td>Mei/Reaper</td>
+                        <td>Baptiste</td>
+                        <td>Lucio</td>
+                    </tr>
+                    <tr>
+                        <td>Poke-Brawl</td>
+                        <td>Reinhardt</td>
+                        <td>Sigma</td>
+                        <td>Hanzo</td>
+                        <td>Mei</td>
+                        <td>Baptiste</td>
+                        <td>Lucio</td>
+                    </tr>
+                    <tr>
+                        <td>Double Shield</td>
+                        <td>Orisa</td>
+                        <td>Sigma</td>
+                        <td>Ashe</td>
+                        <td>Hanzo</td>
+                        <td>Baptiste</td>
+                        <td>Zen</td>
+                    </tr>
+                </table>
+    </div>
+
+    <br>
+            
+<!-- footer -->
+    
+<ul class="footer"><div class="rights">© Copyright - ACE ESPORTS - 2021 | All rights reserved</div></ul>
+
+<!-- script -->
+
+<script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+</script>
+
+</body>
+</html>
